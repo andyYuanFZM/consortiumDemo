@@ -102,7 +102,7 @@ Solidity语言更多信息, 请参阅  [[Solidity中文官方文档]](https://le
 和公链每一笔交易都要收取手续费不一样, 联盟链默认是把手续费功能关闭的，用户在交易上链时不需要考虑地址下有没有燃料的问题，交易用私钥签名后就可以直接上链了。  
 ### JAVA-SDK
 #### JAVA-SDK部署
-适用于应用平台使用JAVA开发的情况,提供SDK对应的jar包，SDK里包含了公私钥生成,合约部署方法,合约调用方法,交易签名,交易查询,区块链信息查询等方法。  [[JAVA-SDK]](https://github.com/andyYuanFZM/consortiumDemo/tree/main/src/test/java/com/chain33/cn/JAVA-SDK开发环境.md)  
+适用于应用平台使用JAVA开发的情况,提供SDK对应的jar包，SDK里包含了公私钥生成,合约部署方法,合约调用方法,交易签名,交易查询,区块链信息查询等方法。  [[JAVA-SDK]](https://github.com/andyYuanFZM/consortiumDemo/blob/master/JAVA-SDK%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.md)  
 
 #### 运行JAVA Demo程序  
 1. 调用 [[BlockChainTest.java]](https://github.com/andyYuanFZM/consortiumDemo/blob/master/src/test/java/com/chain33/cn/BlockChainTest.java)  中的createAccount方法，生成地址和私钥
