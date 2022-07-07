@@ -1,11 +1,11 @@
 ## 搭建JAVA-SDK开发环境
 ### 下载JAVA-SDK
-1. 下载最新版本的JAVA-SDK包[[下载链接]](https://github.com/33cn/chain33-sdk-java/releases/download/1.0.17/chain33-sdk-java-1.0.17.zip)  
+1. 下载最新版本的JAVA-SDK包[[下载链接]](https://github.com/33cn/chain33-sdk-java/releases/download/1.0.18/chain33-sdk-java-1.0.18.zip)  
 2. 解压JAVA-SDK压缩包。  
 3. 将SDK压缩包中的JAR包安装到本地仓库  
 ```
 # 在jar包所在目录，执行如下命令
-mvn install:install-file -Dfile=chain33-sdk-java.jar -DgroupId=cn.chain33 -DartifactId=chain33-sdk-java -Dversion=1.0.17 -Dpackaging=jar
+mvn install:install-file -Dfile=chain33-sdk-java.jar -DgroupId=cn.chain33 -DartifactId=chain33-sdk-java -Dversion=1.0.18 -Dpackaging=jar
 ```
 执行结果中打印BUILD SUCCESS，表明添加成功。
 如果因time out导致构建失败，可以再次执行以上命令，直至构建成功。
@@ -20,7 +20,7 @@ mvn install:install-file -Dfile=chain33-sdk-java.jar -DgroupId=cn.chain33 -Darti
        <dependency>
          <groupId>cn.chain33</groupId>
          <artifactId>chain33-sdk-java</artifactId>
-         <version>1.0.17</version>
+         <version>1.0.18</version>
        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

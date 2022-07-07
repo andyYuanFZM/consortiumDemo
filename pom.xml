@@ -20,7 +20,7 @@
     <dependency>
          <groupId>cn.chain33</groupId>
          <artifactId>chain33-sdk-java</artifactId>
-         <version>1.0.17</version>
+         <version>1.0.18</version>
        </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

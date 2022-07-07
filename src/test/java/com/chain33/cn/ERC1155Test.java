@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSONObject;
 
-import cn.chain33.javasdk.client.Account;
 import cn.chain33.javasdk.client.RpcClient;
 import cn.chain33.javasdk.model.AccountInfo;
 import cn.chain33.javasdk.model.rpcresult.QueryTransactionResult;
@@ -55,11 +54,11 @@ public class ERC1155Test {
     	
     	
     	// =======> step1： 为用户A和B生成私钥和地址
-    	AccountInfo infoA = createAccount();
+    	AccountInfo infoA = CommonUtil.createAccount();
     	useraAddress = infoA.getAddress();
     	useraPrivateKey = infoA.getPrivateKey();
     	
-    	AccountInfo infoB = createAccount();
+    	AccountInfo infoB = CommonUtil.createAccount();
     	userbAddress = infoB.getAddress();
     	userbPrivateKey = infoB.getPrivateKey();
     	
@@ -119,15 +118,6 @@ public class ERC1155Test {
         
     }
     
-    /**
-     * Step1: 生成私钥，地址
-     * 一般在用户注册时调用，生成后在数据库中和用户信息绑定，后续直接从库中查出来使用
-     */
-    private AccountInfo createAccount() {
-    	Account account = new Account();
-		AccountInfo accountInfo = account.newAccountLocal();
-		return accountInfo;
-    }
     
     /**
      * Step2:部署合约

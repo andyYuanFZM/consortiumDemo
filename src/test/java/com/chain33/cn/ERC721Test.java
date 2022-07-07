@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSONObject;
 
-import cn.chain33.javasdk.client.Account;
 import cn.chain33.javasdk.client.RpcClient;
 import cn.chain33.javasdk.model.AccountInfo;
 import cn.chain33.javasdk.model.decode.DecodeRawTransaction;
@@ -62,12 +61,12 @@ public class ERC721Test {
 	    @Test
 	    public void testERC721() throws Exception {
 	    	
-	    	// =======> 为用户A和B生成私钥和地址
-	    	AccountInfo infoA = createAccount();
+	    	// =======> step1： 为用户A和B生成私钥和地址
+	    	AccountInfo infoA = CommonUtil.createAccount();
 	    	useraAddress = infoA.getAddress();
 	    	useraPrivateKey = infoA.getPrivateKey();
 	    	
-	    	AccountInfo infoB = createAccount();
+	    	AccountInfo infoB = CommonUtil.createAccount();
 	    	userbAddress = infoB.getAddress();
 	    	userbPrivateKey = infoB.getPrivateKey();
 	    	
@@ -115,15 +114,6 @@ public class ERC721Test {
 	        queryContractString(packAbiGet, contractAddress, "NFTID=" + tokenId + "的URI信息");
 	    }
 	    
-	    /**
-	     * Step1: 生成私钥，地址
-	     * 一般在用户注册时调用，生成后在数据库中和用户信息绑定，后续直接从库中查出来使用
-	     */
-	    private AccountInfo createAccount() {
-	    	Account account = new Account();
-			AccountInfo accountInfo = account.newAccountLocal();
-			return accountInfo;
-	    }
 	    
 	    /**
 	     * Step2:部署合约
@@ -166,7 +156,7 @@ public class ERC721Test {
 				System.out.println("合约部署成功");
 
 			} else {
-				System.out.println("合约部署失败，一般失败原因可能是因为地址下手续费不够");
+				System.out.println("合约部署失败,请通过区块链浏览器或命令行查看失败原因");
 			}
 			
 			return txhash;
@@ -212,7 +202,7 @@ public class ERC721Test {
 				System.out.println("合约调用成功");
 				
 			} else {
-				System.out.println("合约调用失败，一般失败原因可能是因为地址下手续费不够");
+				System.out.println("合约部署失败,请通过区块链浏览器或命令行查看失败原因");
 			}
 			
 			return txhash;
