@@ -150,7 +150,7 @@ contract newERC1155 is ERC1155 {
 - bytecode含义： 字节码，即合约代码的编译结果，也是合约部署时使用的关键数据，通过SDK可以将合约字节码部署到目标的生产链上使用。  
 
 ### 合约参考例子
-[[管理员发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/tree/master/src/test/solidity/ERC1155ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
+[[管理员发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/blob/master/src/test/java/com/chain33/cn/solidity/ERC1155ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
 
 **备注：**
 - 限制是否由管理员发行,实际就是在合约的mint方法中简单加了以下限制条件判断,其它逻辑没有任何区别。  
