@@ -128,7 +128,7 @@ contract newERC1155 is ERC1155 {
 
 ### NFT合约编译
 将上述两份合约代码分别拷贝到在线IDE中, 使用[[remix]](https://remix.ethereum.org/), 注意编译器版本要和代码上的一致（选用0.8.1）  
-![Image text](https://github.com/andyYuanFZM/btyDemo/blob/master/src/test/resources/compilation.png)  
+![Image text](https://github.com/andyYuanFZM/consortiumDemo/blob/master/src/test/resources/compilation.png)  
 如上图，从IDE中编译获取到ABI和bytecode（红框中按钮点一下就可以将信息拷贝出来, bytecode里包含了很多信息,只需要复制其下"object"里的信息），为下一步合约部署上链做准备。  
 
 - ABI含义：   合约接口说明，即应用程序二进制接口（Application Binary Interface，ABI）。可以理解为合约的接口说明。当合约被编译后，其对应的ABI也会一起生成，它类似于程序的接口说明文档，描述了属性和方法签名相关信息，包括字段名称、字段类型、方法名称、参数名称、参数类型、方法返回值等。  
@@ -150,10 +150,9 @@ contract newERC1155 is ERC1155 {
 - bytecode含义： 字节码，即合约代码的编译结果，也是合约部署时使用的关键数据，通过SDK可以将合约字节码部署到目标的生产链上使用。  
 
 ### 合约参考例子
-[[管理员发行ERC1155]](https://github.com/andyYuanFZM/btyDemo/tree/master/src/test/solidity/ERC1155ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
-[[用户发行ERC1155]](https://github.com/andyYuanFZM/btyDemo/tree/master/src/test/solidity/ERC1155ByUser.sol): NFT合约不限制只有管理员才能发行，任何用户都可以调用mint方法发行NFT， 适用于平台任意作者都可以发行NFT的业务场景。  
-[[管理员发行ERC721]](https://github.com/andyYuanFZM/btyDemo/tree/master/src/test/solidity/ERC721ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
-[[用户发行ERC1155]](https://github.com/andyYuanFZM/btyDemo/tree/master/src/test/solidity/ERC721ByUser.sol): NFT合约不限制只有管理员才能发行，任何用户都可以调用mint方法发行NFT， 适用于平台任意作者都可以发行NFT的业务场景。  
+[[管理员发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/tree/master/src/test/solidity/ERC1155ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
+[[用户发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/tree/master/src/test/solidity/ERC1155ByUser.sol): NFT合约不限制只有管理员才能发行，任何用户都可以调用mint方法发行NFT， 适用于平台任意作者都可以发行NFT的业务场景。  
+[[管理员发行ERC721]]
 
 **备注：**
 - 限制是否由管理员发行,实际就是在合约的mint方法中简单加了以下限制条件判断,其它逻辑没有任何区别。  
@@ -164,7 +163,7 @@ contract newERC1155 is ERC1155 {
 
 ### NFT合约部署调用流程
 应用和区块链交互流程： 
-![Image text](https://github.com/andyYuanFZM/btyDemo/blob/master/src/test/resources/flow.png)   
+![Image text](https://github.com/andyYuanFZM/consortiumDemo/blob/master/src/test/resources/flow.png)   
 1. 生成用户公私钥和区块链地址，应用层调用SDK中的创建公私钥方法，生成私钥和区块链地址。 然后将它们在应用层数据库中和用户关联，这样每一个用户都有了一个区块链上的身份。  
 2. NFT合约部署，调用SDK构造部署合约的交易并签名该交易上链，一般而言NFT合约的部署是一次性动作（在没有合约逻辑变动，部署好后就固定运行在区块链上）， 建议合约的部署由专门的管理员来操作。管理员私钥和地址，也需要安全的存放在数据库中。  
 3. NFT资产发行，调用SDK构造并签名发行NFT的交易。  
