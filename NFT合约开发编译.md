@@ -151,8 +151,6 @@ contract newERC1155 is ERC1155 {
 
 ### 合约参考例子
 [[管理员发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/tree/master/src/test/solidity/ERC1155ByManager.sol): 限制NFT发行这个动作只能由合约的部署人（管理员）来执行, 适用于平台对于NFT发行有限制的业务场景。   
-[[用户发行ERC1155]](https://github.com/andyYuanFZM/consortiumDemo/tree/master/src/test/solidity/ERC1155ByUser.sol): NFT合约不限制只有管理员才能发行，任何用户都可以调用mint方法发行NFT， 适用于平台任意作者都可以发行NFT的业务场景。  
-[[管理员发行ERC721]]
 
 **备注：**
 - 限制是否由管理员发行,实际就是在合约的mint方法中简单加了以下限制条件判断,其它逻辑没有任何区别。  
