@@ -129,7 +129,7 @@ String paraName = "user.p.mbaas.";
 
 #### GO-SDK  
 适用于应用平台使用Golang开发的情况,SDK里包含了公私钥生成,合约部署方法,合约调用方法,交易签名,交易查询,区块链信息查询等方法。   
-GO-SDK的使用参考链接： [[GO-SDK]](https://github.com/33cn/chain33-sdk-go)   
+GO-SDK的使用参考链接： [[GO-SDK]](https://github.com/andyYuanFZM/go-sdk-demo)   
 
 ## 应用和BTY平行链对接注意事项   
 交易上链失败的情况：  
